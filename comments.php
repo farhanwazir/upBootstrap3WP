@@ -99,7 +99,7 @@ if ( post_password_required() )
 		) . '</p>',
 	
 		'comment_notes_before' => '<p class="comment-notes">' .
-		__( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) .
+		__( 'Your email address will not be published.' ) . ( $req ? '<span class="required">*</span>' : '' ) .
 		'</p>',
 	
 		'comment_notes_after' => '<p class="form-allowed-tags">' .
@@ -115,13 +115,13 @@ if ( post_password_required() )
 				'<label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' .
 				( $req ? '<span class="required">*</span>' : '' ) .
 				'<input id="author" class="form-control" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-				'" size="30"' . $aria_req . ' /></p>',
+				'" size="30" /></p>',
 	
 				'email' =>
 				'<p class="comment-form-email"><label for="email">' . __( 'Email', 'domainreference' ) . '</label> ' .
 				( $req ? '<span class="required">*</span>' : '' ) .
 				'<input id="email" class="form-control" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-				'" size="30"' . $aria_req . ' /></p>',
+				'" size="30" /></p>',
 	
 				'url' =>
 				'<p class="comment-form-url"><label for="url">' .

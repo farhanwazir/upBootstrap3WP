@@ -2,10 +2,16 @@
 /**
  *
  * @author Matthias Thom | http://upplex.de
- * @package upBootWP 1.1
+ * @extended Farhan Wazir | http://cideator.com
+ * @package upBootWP 1.2
  */
 
-if (!isset($content_width)) $content_width = 770;
+if (!isset($content_width)) $content_width = 960;
+
+add_action( 'vc_before_init', 'upbootwp_vcSetAsTheme' );
+function upbootwp_vcSetAsTheme() {
+    vc_set_as_theme();
+}
 
 /**
  * upbootwp_setup function.
@@ -66,9 +72,9 @@ function upbootwp_widgets_init() {
 add_action( 'widgets_init', 'upbootwp_widgets_init' );
 
 function upbootwp_scripts() {
-	wp_enqueue_style( 'upbootwp-css', get_template_directory_uri().'/css/upbootwp.min.css', array(), '1.1');
-	wp_enqueue_script( 'upbootwp-jQuery', get_template_directory_uri().'/js/jquery.js',array(),'2.0.3',true);
-	wp_enqueue_script( 'upbootwp-basefile', get_template_directory_uri().'/js/bootstrap.min.js',array(),'1.1',true);
+	wp_enqueue_style( 'upbootwp-css', get_template_directory_uri().'/inc/assets/css/upbootwp.min.css', array(), '1.1');
+	wp_enqueue_script( 'upbootwp-jQuery', get_template_directory_uri().'/inc/assets/js/jquery.js',array(),'2.0.3',true);
+	wp_enqueue_script( 'upbootwp-basefile', get_template_directory_uri().'/inc/assets/js/bootstrap.min.js',array(),'1.1',true);
 }
 add_action( 'wp_enqueue_scripts', 'upbootwp_scripts' );
 
@@ -80,8 +86,8 @@ add_action( 'wp_enqueue_scripts', 'upbootwp_scripts' );
  * @return void
  */
 function upbootwp_less() {
-	printf('<link rel="stylesheet" type="text/less" href="%s" />', get_template_directory_uri().'/less/bootstrap.less?ver=1.1'); // raus machen :) 
-	printf('<script type="text/javascript" src="%s"></script>', get_template_directory_uri().'/js/less.js?ver=1.6.1');
+	printf('<link rel="stylesheet" type="text/less" href="%s" />', get_template_directory_uri().'/inc/assets/less/bootstrap.less?ver=1.1'); // raus machen :) 
+	printf('<script type="text/javascript" src="%s"></script>', get_template_directory_uri().'/inc/assets/js/less.js?ver=1.6.1');
 }
 // Enable this when you want to work with less
 //add_action('wp_head', 'upbootwp_less');
