@@ -4,7 +4,7 @@ Based on Twitter Bootstrap 3.0.3
 
 To get started with Bootstrap 3, check out [http://getbootstrap.com](http://getbootstrap.com)!
 
-By [upplex - webdesign](http://upplex.de)
+By [upplex - webdesign](http://upplex.de) | [Farhan Wazir - development and designing](http://cideator.com) 
 
 ## Quick start
 
@@ -20,4 +20,4 @@ Submit your pull request and I will check it.
 
 ## Copyright and license
 
-Copyright 2014 upplex under GPL 3.0(LICENSE)
+Copyright 2014, under GPL 3.0(LICENSE)
